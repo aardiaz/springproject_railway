@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>productGallery</title>
+</head>
+<body>
+	
+	
+	 <th:block th:insert="Header.html"></th:block>
+	   
+	      <div class="container-fluid">
+			  
+			  <div class="card">
+				  
+				     <div class="card-header bg-info text-center text-white">
+						 <h4>Prodcut Gallery </h4>
+					 </div>
+					 
+				     <div class="card-body">
+						 
+						 <div class="row">
+						 
+						 <div class="col-3 card"   th:each="product : ${productList}" >
+							  <img  width="300" height="300" th:src="@{${product.image}}" class="card-img-top p-2" alt="...">
+							  <div class="card-body">
+							    <h5 class="card-title">[[${product.title}]]</h5>
+							    <p class="card-text">[[${product.category}]]</p>
+							    <a href="#" class="btn btn-primary">[[${product.rating.count}]]</a>
+							  </div>
+							</div>
+							
+						</div>	
+						 
+					 </div>
+				     
+				     <div class="card-footer bg-warning text-center">copyright@2024</div>
+			  </div>
+			  
+		  </div>
+
+</body>
+</html>
